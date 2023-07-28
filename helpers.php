@@ -5,6 +5,6 @@ function saudacao () {
     return 'Boa tarde';
 };
 
-function resumirTexto () {
-    return 'Texto resumido';
+function resumirTexto ($texto, $limite, $continue='...') {
+    return $texto;
 };

@@ -4,6 +4,8 @@
 require_once 'sistema/config.php';
 include_once 'helpers.php';
 
+$texto = "Texto de uma variável";
+
 echo saudacao();
 echo '<hr>';
-echo resumirTexto();
+echo resumirTexto($texto, 50);
