@@ -1,4 +1,4 @@
 <?php
 // Arquivo de configuração do sistema
 
-echo 'Cu ao quadrado';
+echo 'Arquivo de configurações';
