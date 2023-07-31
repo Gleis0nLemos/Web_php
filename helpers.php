@@ -3,17 +3,19 @@
 
 function saudacao (): string {
 
-    $hora = 12;
+    $hora = 123;
     $saudacao = '';
 
-    if($hora >= 0 && $hora <=5){
+    if($hora >= 0 and $hora <=5){
         $saudacao = '<h1>Boa madrugada</h1>';
-    }
-
-    if($hora >= 6 && $hora <=12){
+    } elseif($hora >= 6 and $hora <=12){
         $saudacao = '<h1>Bom dia</h1>';
+    } elseif($hora >= 13 and $hora <=18){
+        $saudacao = '<h1>Boa tarde</h1>';
+    } else{
+        $saudacao = '<h1>Boa noite</h1>';
     }
-
+    
     return $saudacao;
 };
 
