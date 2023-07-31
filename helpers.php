@@ -3,8 +3,9 @@
 
 function saudacao (): string {
 
-    $hora = 123;
-    $saudacao = '';
+    date_default_timezone_set('America/Sao_Paulo'); #definindo o fusop horário
+
+    $hora = intval(date('G'));
 
     if($hora >= 0 and $hora <=5){
         $saudacao = '<h1>Boa madrugada</h1>';
@@ -15,7 +16,7 @@ function saudacao (): string {
     } else{
         $saudacao = '<h1>Boa noite</h1>';
     }
-    
+
     return $saudacao;
 };
 
