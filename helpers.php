@@ -24,15 +24,16 @@ function saudacao (): string {
 function resumirTexto (string $texto, int $limite, string $continue='...'): string {
     
     # 'trim' retira os espaços em branco no inicio e no final da string
-    $textoLimpo = trim($texto);
+    # strip_tags retira qualquer tag HTML, JS etc que tiver no conteúdo da variável texto
+    $textoLimpo = trim(strip_tags($texto));
     # mb_strlen data a quantidade de caracteres da string
     if(mb_strlen($textoLimpo) <= $limite){
         return $textoLimpo;
     }
 
-    # 1, em (mb_substr($textoLimpo, 0, $limite) será pego a ocorrencia de caracteres do
+    # 1, em (mb_substr($textoLimpo, 0, $limite) será pego a ocorrência de caracteres do
     # texto até o limite pré definido;
-    # 2, em mb_strrpos(mb_substr($textoLimpo, 0, $limite), '', buscará a ultima ocorrencia de um espaço
+    # 2, em mb_strrpos(mb_substr($textoLimpo, 0, $limite), '', buscará a ultima ocorrência de um espaço
     # referente ao texto resumido de 1;
     # 3, portanto a funcao completa abaixo retornará o texto começando do caractere na posição 0
     # até a última ocorrência de um espaço, evitando assim a quebra de palavras.

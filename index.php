@@ -15,18 +15,7 @@ include_once 'helpers.php';
 # ex: **em helpers.php for int $limite, e aqui for '50' funcionará normalmente
 # porém, se o valor for '50 e um' apresentará um erro. 
 
-$texto = 'texto para resumo';
+$texto = '<h1>texto</h1> <p>para</p> resumo';
+$texto = strip_tags($texto);
 
-/*
-echo $total = mb_strlen(trim($texto));
-echo '<hr>';
-echo $resumo = mb_substr($texto, 0, 5);
-echo '<hr>';    
-echo $ocorrencia = mb_strrpos($texto, 'x');
-*/
-
-// var_dump($texto);
-// echo '<hr>';
-// echo saudacao();
-// echo '<hr>';
-echo resumirTexto($texto, 10);
+echo resumirTexto($texto, 50);
