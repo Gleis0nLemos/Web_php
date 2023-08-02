@@ -21,6 +21,15 @@ function saudacao (): string {
 };
 
 # a declaração 'string $texto' espera que o conteúdo de texto seja uma string
+/**
+ * Resume um texto
+ * 
+ * @param string $texto texto a resumir
+ * @param int $limite quantidade de caracteres
+ * @param string $continue opcional - o que deve aparecer após o texto resumido
+ * 
+ * @return string texto resumido 
+ */
 function resumirTexto (string $texto, int $limite, string $continue='...'): string {
     
     # 'trim' retira os espaços em branco no inicio e no final da string

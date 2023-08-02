@@ -16,6 +16,5 @@ include_once 'helpers.php';
 # porém, se o valor for '50 e um' apresentará um erro. 
 
 $texto = '<h1>texto</h1> <p>para</p> resumo';
-$texto = strip_tags($texto);
 
 echo resumirTexto($texto, 50);
