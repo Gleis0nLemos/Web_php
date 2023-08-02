@@ -14,16 +14,19 @@ include_once 'helpers.php';
 # o PHP tentará converter para o tipo esperado se possível.
 # ex: **em helpers.php for int $limite, e aqui for '50' funcionará normalmente
 # porém, se o valor for '50 e um' apresentará um erro. 
+
 $texto = 'texto para resumo';
 
-$string = 'text';
-$int = '10';
-$float = '9.8';
-$bool = true;
-$nulo = null;
+/*
+echo $total = mb_strlen(trim($texto));
+echo '<hr>';
+echo $resumo = mb_substr($texto, 0, 5);
+echo '<hr>';    
+echo $ocorrencia = mb_strrpos($texto, 'x');
+*/
 
-var_dump($texto);
-echo '<hr>';
-echo saudacao();
-echo '<hr>';
-echo resumirTexto($texto, 50);
+// var_dump($texto);
+// echo '<hr>';
+// echo saudacao();
+// echo '<hr>';
+echo resumirTexto($texto, 10);
