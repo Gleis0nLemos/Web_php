@@ -15,6 +15,19 @@ include_once 'helpers.php';
 # ex: **em helpers.php for int $limite, e aqui for '50' funcionará normalmente
 # porém, se o valor for '50 e um' apresentará um erro. 
 
-$texto = '<h1>texto</h1> <p>para</p> resumo';
+// echo formatarValor();
+echo formataNumero();
 
-echo resumirTexto($texto, 50);
+// $valor = 5;
+
+// if($valor) {
+//     echo $valor;
+// }
+// else {
+//     echo 0;
+// }
+
+# para condicionais simples/pequenas pode-se utilizar a exibição abaixo
+# conhecida como 'Operador Ternário': 
+// echo ($valor? $valor:0);
+// echo ($valor ?: 0); # forma amis resumida ainda 

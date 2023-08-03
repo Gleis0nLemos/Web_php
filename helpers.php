@@ -1,6 +1,38 @@
 <?php
 //Arquivo de funções
 
+/**
+ * Formata determinado valor pré definido
+ * 
+ * @param float $valor valor a ser formatado
+ * 
+ * @return string valor formatado
+ */
+function formatarValor(float $valor=0): string {
+# acima a função poderia ser também (float $valor=null);
+# adicionei uma fomra alternativa para pré-definir um valor no return abaixo, utilizando
+# um operador terńario
+    return number_format($valor?:10, 2, ',', '.'); #poderia ser - '$valor? valor: 0'
+}
+
+
+/**
+ * formata um numero
+ * 
+ * @param string $numero definido
+ * @param string|null $numero caso nenhum parâmetro não seja definido
+ * @return string numero formatado
+ */
+function formataNumero(string $numero=null): string {
+    return number_format($numero?:0, 0, '.', '.');
+}
+
+
+/**
+ * Retorna uma saudação de acordo com o horário local
+ * 
+ * @return string saldação
+ */
 function saudacao (): string {
 
     date_default_timezone_set('America/Sao_Paulo'); #definindo o fuso horário
@@ -19,6 +51,7 @@ function saudacao (): string {
 
     return $saudacao;
 };
+
 
 # a declaração 'string $texto' espera que o conteúdo de texto seja uma string
 /**
