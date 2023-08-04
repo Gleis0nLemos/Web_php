@@ -3,6 +3,49 @@
 
 require_once 'sistema/config.php';
 
+
+/**
+ * conta o tempo a partir da chamada da função
+ * 
+ * @param string $data data definida an chamada da função
+ * @return string retorno com a devida passagem temporal
+ */
+function contarTempo(string $data) {
+
+    # definindo a diferença entre a chamada da função e o tempo de agora em segundos
+    # strtotime é o responsavél por nos retornar esse valor
+    $agora = strtotime(date('Y-m-d H:i:s'));
+    $tempo = strtotime($data);
+    $diferenca = $agora - $tempo;
+
+    # criando variáveis de saída para com o passar do tempo baseado na diferença
+    $segundos = $diferenca;
+    $minutos = round($diferenca/60);
+    $horas = round($diferenca/3600);
+    $dias = round($diferenca/86400);
+    $semanas = round($diferenca/604800);
+    $meses = round($diferenca/2419200);
+    $anos = round($diferenca/29030400);
+
+    # como vai ser o retorno ao usuário
+    if($segundos <= 60){
+        return 'agora';
+    } elseif($minutos <= 60) {
+        return $minutos == 1?'1 minuto atrás ': $minutos.' minutos atrás';
+    } elseif($horas <= 24) {
+        return $horas == 1?'1 hora ': $horas.' horas atrás';
+    } elseif($dias <= 7) {
+        return $dias == 1?'Há 1 dia atrás': $dias.' dias atrás';
+    } elseif($semanas <= 4) {
+        return $semanas == 1?'1 semana atrás ': $semanas.' semanas atrás';
+    } elseif($meses <= 12) {
+        return $meses == 1?'1 mês atrás': $meses. ' meses atrás';
+    } else {
+        return $anos == 1?'1 ano atrás': $anos.' anos atrás';
+    }
+}
+
+
 /**
  * Formata determinado valor pré definido
  * 
