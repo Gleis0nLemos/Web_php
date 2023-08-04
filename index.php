@@ -15,19 +15,13 @@ include_once 'helpers.php';
 # ex: **em helpers.php for int $limite, e aqui for '50' funcionará normalmente
 # porém, se o valor for '50 e um' apresentará um erro. 
 
-// echo formatarValor();
-echo formataNumero();
-
-// $valor = 5;
-
-// if($valor) {
-//     echo $valor;
-// }
-// else {
-//     echo 0;
-// }
-
 # para condicionais simples/pequenas pode-se utilizar a exibição abaixo
 # conhecida como 'Operador Ternário': 
 // echo ($valor? $valor:0);
 // echo ($valor ?: 0); # forma amis resumida ainda 
+
+#abaixo, dia/mês/ano   Hora/minutos/segundos
+$data = date('d/m/Y H:i:s');
+echo $data;
+
+echo saudacao();

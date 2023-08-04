@@ -1,6 +1,8 @@
 <?php
 //Arquivo de funções
 
+require_once 'sistema/config.php';
+
 /**
  * Formata determinado valor pré definido
  * 
@@ -10,7 +12,7 @@
  */
 function formatarValor(float $valor=0): string {
 # acima a função poderia ser também (float $valor=null);
-# adicionei uma fomra alternativa para pré-definir um valor no return abaixo, utilizando
+# adicionei uma forma alternativa para pré-definir um valor no return abaixo, utilizando
 # um operador terńario
     return number_format($valor?:10, 2, ',', '.'); #poderia ser - '$valor? valor: 0'
 }
@@ -23,7 +25,7 @@ function formatarValor(float $valor=0): string {
  * @param string|null $numero caso nenhum parâmetro não seja definido
  * @return string numero formatado
  */
-function formataNumero(string $numero=null): string {
+function formataNumero(int $numero=null): string {
     return number_format($numero?:0, 0, '.', '.');
 }
 
@@ -35,7 +37,7 @@ function formataNumero(string $numero=null): string {
  */
 function saudacao (): string {
 
-    date_default_timezone_set('America/Sao_Paulo'); #definindo o fuso horário
+    //date_default_timezone_set('America/Sao_Paulo'); #definindo o fuso horário
 
     $hora = intval(date('G'));
 
