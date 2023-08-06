@@ -5,12 +5,38 @@ require_once 'sistema/config.php';
 
 
 /**
+ * valida endereços de URL
+ * 
+ * @param string $url endereço de URL datado pela chamada da função
+ * @return string dizendo se a URL é válida ou não
+ */
+function validarURL(string $url): string {
+    
+    $validacao =  filter_var($url, FILTER_VALIDATE_URL);
+    return $validacao==true?'Endereço de URL válida': $validacao.'URL inválida';
+}
+
+
+/**
+ * valida endereços de email
+ * 
+ * @param string $url endereço de email datado pela chamada da função
+ * @return string dizendo se a URL é válida ou não
+ */
+function validarEmail(string $email): string {
+    
+    $validacao =  filter_var($email, FILTER_VALIDATE_EMAIL);
+    return $validacao==true?'Endereço de email válido': $validacao.'Email inválido';
+}
+
+
+/**
  * conta o tempo a partir da chamada da função
  * 
  * @param string $data data definida an chamada da função
  * @return string retorno com a devida passagem temporal
  */
-function contarTempo(string $data) {
+function contarTempo(string $data): string {
 
     # definindo a diferença entre a chamada da função e o tempo de agora em segundos
     # strtotime é o responsavél por nos retornar esse valor

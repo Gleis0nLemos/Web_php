@@ -25,4 +25,5 @@ include_once 'helpers.php';
 
 echo contarTempo('2023-08-04 17:07:12');
 
+echo validarEmail('gleison@gmail.com'); 
 echo saudacao();
