@@ -14,16 +14,16 @@ include_once 'helpers.php';
 # o PHP tentará converter para o tipo esperado se possível.
 # ex: **em helpers.php for int $limite, e aqui for '50' funcionará normalmente
 # porém, se o valor for '50 e um' apresentará um erro. 
-$texto = 'texto para resumo';
 
-$string = 'text';
-$int = '10';
-$float = '9.8';
-$bool = true;
-$nulo = null;
+# para condicionais simples/pequenas pode-se utilizar a exibição abaixo
+# conhecida como 'Operador Ternário': 
+// echo ($valor? $valor:0);
+// echo ($valor ?: 0); # forma mais resumida ainda 
 
-var_dump($texto);
-echo '<hr>';
+#abaixo, dia/mês/ano   Hora/minutos/segundos
+# echo $data = date('d/m/Y H:i:s');
+
+echo contarTempo('2023-08-04 17:07:12');
+
+var_dump(validarURL('http://facebook.com'));
 echo saudacao();
-echo '<hr>';
-echo resumirTexto($texto, 50);
