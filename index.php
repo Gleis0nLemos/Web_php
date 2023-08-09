@@ -25,5 +25,5 @@ include_once 'helpers.php';
 
 echo contarTempo('2023-08-04 17:07:12');
 
-echo validarEmail('gleison@gmail.com'); 
+var_dump(validarURL('http://facebook.com'));
 echo saudacao();

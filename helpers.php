@@ -10,7 +10,31 @@ require_once 'sistema/config.php';
  * @param string $url endereço de URL datado pela chamada da função
  * @return string dizendo se a URL é válida ou não
  */
-function validarURL(string $url): string {
+function validarURL(string $url): bool {
+    
+    if (mb_strlen($url) < 10) {
+        return false;
+    }
+    # a "!" serve para indicar um sinal de negação na condicional
+    # assim, a lógica fica a seguinte: 'se a url NÃO contém um "." retorna 'false'
+    if (!str_contains($url, '.')) {
+        return false;
+    }
+
+    if (str_contains($url, 'http://') or str_contains($url, 'https://')) {
+        return true;
+    }
+    return false;
+}
+
+
+/**
+ * valida endereços de URL
+ * 
+ * @param string $url endereço de URL datado pela chamada da função
+ * @return string dizendo se a URL é válida ou não
+ */
+function validarURLComFiltro(string $url): string {
     
     $validacao =  filter_var($url, FILTER_VALIDATE_URL);
     return $validacao==true?'Endereço de URL válida': $validacao.'URL inválida';
